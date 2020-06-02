@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-1">
+            <form (ngSubmit)="onCreatePost(postForm.value)" #postForm="ngForm">
+                <div class="form-group">
+                    <label for="title">Tiltle</label>
+                    <input type="text" id="title" name="title" ngModel class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea name="content" ngModel  class="form-control" rows="6" required>
+                    </textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="postForm.invalid">Send Post</button>
+            </form>
+            <hr>
+            <button type="button" class="btn btn-primary">Fetch Post</button> |
+            <button type="button" class="btn btn-danger">Clear Post</button>
+        </div>
+    </div>
+</div>

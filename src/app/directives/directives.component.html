@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">Only Show Odd Numbers</button>
+            <br><br>
+            <ul class="list-group">
+                <!-- <div *ngIf="!onlyOdd">
+                    <li class="list-group-item"
+                        [ngStyle]="{backgroundColor: even%2==0 ? 'transparent' : 'pink'}" 
+                        [ngClass]="{even: even%2==0}" 
+                        *ngFor="let even of evenNumbers">{{even}}
+                    </li>
+                </div> -->
+                <div *appUnless="onlyOdd"> 
+                    <li class="list-group-item"
+                        [ngStyle]="{backgroundColor: even%2==0 ? 'transparent' : 'pink'}" 
+                        [ngClass]="{even: even%2==0}" 
+                        *ngFor="let even of evenNumbers">{{even}}
+                    </li>
+                </div>
+                <div *ngIf="onlyOdd">
+                    <li class="list-group-item" 
+                        [ngStyle]="{backgroundColor: odd%2==0 ? 'transparent' : 'pink'}" 
+                        [ngClass]="{odd: odd%2!=0}" 
+                        *ngFor="let odd of oddNumbers">{{odd}}
+                    </li>
+                </div>
+                <ng-template [ngIf]="onlyOdd">
+                    <div>
+                        <!--*ngIf/ what's happening behind the scene there is no * it's ultimately convert into property binding-->
+                        <li class="list-group-item" 
+                            [ngStyle]="{backgroundColor: odd%2==0 ? 'transparent' : 'pink'}" 
+                            [ngClass]="{odd: odd%2!=0}" 
+                            *ngFor="let odd of oddNumbers">{{odd}}
+                        </li>
+                    </div>
+                </ng-template>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p appBasicHighlight>Custome Attribute Direcitve</p>
+            <p appBetterHighlight [defaultColor]="'lightgreen'" [highlightColor]="'yellow'">
+                Custome Attribute Direcitve-Using HostListener, Hostbinding, Renderer
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <p>ngSwitch Value</p>
+        <div [ngSwitch]="value">
+            <p *ngSwitchCase="5">5</p>
+            <p *ngSwitchCase="10">10</p>
+            <p *ngSwitchDefault>100</p>
+        </div>
+    </div>
+    <div class="row">
+        <p appRainbow>Rainbow color text</p>
+    </div>
+</div>

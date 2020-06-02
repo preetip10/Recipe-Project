@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-12 col-sm-4">
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action" 
+                [routerLink]="['/customers',customer.id,customer.name]"
+                href="#" 
+                *ngFor="let customer of customers">
+                {{customer.name}}
+            </a>
+        </div>
+    </div>
+    <div class="col-12 col-sm-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

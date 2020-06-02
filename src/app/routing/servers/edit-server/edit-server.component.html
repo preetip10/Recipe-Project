@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-12">
+        <h4 *ngIf="!allowEdit">You are not allowed to do edit!</h4>
+        <div *ngIf="allowEdit">
+            <form>
+                <div class="form-group">
+                    <label for="servername">Server Name</label>
+                    <input class="form-control" type="text" id="servername" name="server-name" value="{{server.name}}">
+                </div>
+                <div class="form-group">
+                    <label for="serverstatus">Server Status</label>
+                    <select class="form-control" id="serverstatus">
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="onUpdateServer()" >Update Server</button>
+            </form>
+        </div>
+    </div>
+</div> 

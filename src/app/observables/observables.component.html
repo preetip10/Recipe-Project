@@ -1,0 +1,26 @@
+<div class=container>
+    <div class="row">
+        <div class="col-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <ul class="nav nav-tabs">
+                <li >
+                    <a class="nav-link" routerLink="career">Career</a> 
+                </li>
+                <li >
+                    <a class="nav-link" [routerLink]="['job', 1]">Job 1</a>
+                </li> 
+                <li>
+                    <a class="nav-link" [routerLink]="['job', 2]">Job 2</a> 
+                </li>
+            </ul>
+            
+            <hr/>
+            <p *ngIf="jobActivate">Activated!</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

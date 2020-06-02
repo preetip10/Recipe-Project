@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-10 col-md-8">
+            <h4 class="text-center">Student Form</h4>
+            <form (ngSubmit)="onAdd()" [formGroup]="studentForm">
+                <!-- <div class="form-group">
+                    <label for="studentId">Student ID</label>
+                    <input 
+                        type="number" 
+                        id="studentId"
+                        formControlName="studentId"   
+                        class="form-control"
+                    >
+                </div> -->
+            
+                <div class="form-group">
+                    <label for="studentId">Student First Name</label>
+                    <input 
+                        type="text" 
+                        id="studentFirstName"
+                        formControlName="studentFirstName"   
+                        class="form-control"
+                    >
+                    <span class="help-block">
+                        <div *ngIf="!studentForm.get('studentFirstName').valid && studentForm.get('studentFirstName').touched">
+                            <p>This Field Required!</p>
+                        </div>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="studentLasttName">Student Last Name</label>
+                    <input 
+                        type="text" 
+                        id="studentLasttName"
+                        formControlName="studentLasttName"   
+                        class="form-control"
+                    >
+                    <span class="help-block">
+                        <div *ngIf="!studentForm.get('studentLasttName').valid && studentForm.get('studentLasttName').touched">
+                            <p>This Field Required!</p>
+                        </div>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email"
+                        formControlName="email"   
+                        class="form-control"
+                    >
+                    <span class="help-block">
+                        <div *ngIf="!studentForm.get('email').valid && studentForm.get('email').touched">
+                            <p>This Field Required!</p>
+                        </div>
+                    </span>
+                </div>
+                <button 
+                    type="submit"
+                    class="btn btn-primary"
+                    [disabled]="!studentForm.valid"
+                    >Save
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

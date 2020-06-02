@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>My Servers</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <input type="text" [(ngModel)]="serverName" class="form-control">
+            <p>Server Name: {{ serverName }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-primary mb-3 mr-3" 
+                (click) = "onAddServer(serverName)"
+                >Add Server
+            </button>
+            <button class="btn btn-primary mb-3" (click)="reset()">Reset</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let sever of servers; index as i;">
+                    <a href="" >{{ sever }} {{i}}</a>
+                    <button type="button" 
+                        (click)="removeServer(server)" class="close" 
+                        aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

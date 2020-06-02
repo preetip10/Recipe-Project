@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-12">
+        <h5><label  class="bg-info mb-2 mt-2 p-2 rounded">Add new servers or bluiprints!</label></h5>
+        <label>Server name</label>
+        <!-- <input type="text" class="form-control" [(ngModel)]="newServerName"> -->
+        <input type="text" class="form-control" #serverNameInput>
+        <label>Server content</label>
+        <!-- <input type="text" class="form-control" [(ngModel)] ="newServerContent">  -->
+        <input type="text" class="form-control" #severContentInput> 
+        <br>
+        <button class="btn btn-primary mr-3 mb-3" 
+            (click)="onAddServer(serverNameInput)">Add Server
+        </button>
+        <button class="btn btn-primary  mr-3 mb-3" 
+            (click)="onAddBluprint(serverNameInput)">Add Server Bluprint
+        </button>
+    </div>
+</div>
+
+     
